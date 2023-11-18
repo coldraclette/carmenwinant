@@ -1,6 +1,7 @@
 'use client';
 
 import { Old_Standard_TT } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 
 import Navigation from './components/Navigation';
 
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body>
         <Navigation />
         <main className="py-12 pt-24">{children}</main>
+        <Analytics />
       </body>
     </html>
   );
