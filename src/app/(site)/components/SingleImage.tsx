@@ -13,7 +13,7 @@ export default function SingleImage({
   inModal = false,
 }: SingleImageProps) {
   if (!image) return null;
-  
+
   if (inModal) {
     return (
       <div className="relative mr-[15px]">
@@ -23,7 +23,7 @@ export default function SingleImage({
           width={1200}
           src={urlForImage(image)}
           sizes="(min-width: 1024px) 1200px, 100vw"
-          className={`h-[90vh] w-auto object-contain`}
+          className={`h-auto w-screen object-contain lg:h-[90vh] lg:w-auto`}
           placeholder="blur"
           blurDataURL={image.asset.metadata.lqip}
         />
