@@ -1,6 +1,7 @@
 export interface ProjectProps {
   _id: string;
   title: string;
+  subtitle: string | null;
   year: string | null;
   items: Array<ProjectImage | ProjectTextBlock>;
 }

@@ -9,7 +9,7 @@ export default function ProjectModal({}) {
   if (!isModalOpen || !selectedProject) return null;
 
   return (
-    <div className="fixed bottom-0 z-10 flex h-full items-end justify-center overflow-auto bg-white/50 pt-24 px-4">
+    <div className="fixed bottom-0 z-10 flex h-full items-end justify-center overflow-auto bg-white/80 pt-24 px-4">
       <ProjectRow project={selectedProject} inModal={true} />
     </div>
   );

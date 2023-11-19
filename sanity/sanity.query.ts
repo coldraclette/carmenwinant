@@ -5,6 +5,7 @@ export async function getLandingPage() {
     projects[]->{
       _id,
       title,
+      subtitle,
       year,
       items[]{
         ...,

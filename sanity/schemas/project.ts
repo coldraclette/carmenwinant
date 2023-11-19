@@ -7,7 +7,13 @@ export const project = {
       name: 'title',
       title: 'Title',
       type: 'string',
-      description: 'Title of the project',
+      description: 'Title of the project. This will be shown under the project row and as the title in the modal.',
+    },
+    {
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string',
+      description: 'Subtitle of the project. This will be shown under the project row.'
     },
     {
       name: 'year',
@@ -44,13 +50,14 @@ export const project = {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'year',
+      subtitle: 'subtitle',
+      year: 'year',
       media: 'items',
     },
-    prepare({ title, subtitle, media }: any) {
+    prepare({ title, subtitle, year, media }: any) {
       return {
         title,
-        subtitle,
+        subtitle: subtitle ? `${subtitle}, ${year}` : year,
         media: media ? media[0] : null,
       };
     },
