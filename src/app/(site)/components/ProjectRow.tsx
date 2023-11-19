@@ -58,7 +58,7 @@ export default function ProjectRow({
       </Swiper>
       {!inModal && (
         <div className="mb-6 px-4 pt-2 md:mb-8 md:pl-12">
-          <h2 className="font-bold text-lg">{project.title}</h2>
+          <h2 className="text-lg">{project.title}</h2>
           {project.subtitle && <h3 className="text-sm">{project.subtitle}</h3>}
           {project.year && <h4 className="text-sm">{project.year}</h4>}
         </div>
