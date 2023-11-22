@@ -14,13 +14,21 @@ export default function SingleImage({
 }: SingleImageProps) {
   if (!image) return null;
 
+  const fixedHeightRow = 150;
+  const fixedHeightModal = 800;
+
+  const dynamicWidthRow =
+    image.asset.metadata.dimensions.aspectRatio * fixedHeightRow;
+  const dynamicWidthModal =
+    image.asset.metadata.dimensions.aspectRatio * fixedHeightModal;
+
   if (inModal) {
     return (
       <div className="relative mr-[15px]">
         <Image
           alt=""
-          height={800}
-          width={1200}
+          height={fixedHeightModal}
+          width={dynamicWidthModal}
           src={urlForImage(image)}
           sizes="(min-width: 1024px) 1200px, 100vw"
           className={`h-auto w-screen object-contain lg:h-[90vh] lg:w-auto`}
@@ -35,8 +43,8 @@ export default function SingleImage({
     <div className="relative mr-[15px]">
       <Image
         alt=""
-        height={800}
-        width={1200}
+        height={fixedHeightRow}
+        width={dynamicWidthRow}
         src={urlForSmallerImage(image)}
         sizes="213px"
         className={`h-[150px] w-auto object-contain `}

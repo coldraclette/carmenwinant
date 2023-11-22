@@ -14,12 +14,12 @@ export async function getLandingPage() {
             _id,
             url,
             metadata {
-              lqip
+              lqip,
+              dimensions {
+                aspectRatio
+              }
             }
           }
-        },
-        _type == 'video' => {
-          "playbackId": video.asset->playbackId
         }
       }
     }

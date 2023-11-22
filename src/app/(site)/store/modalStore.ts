@@ -7,6 +7,8 @@ interface ModalState {
   selectedProject: ProjectProps | null;
   isModalOpen: boolean;
   isIndexMenuOpen: boolean;
+  navBarHeight: number;
+  setNavBarHeight: (height: number) => void;
   toggleIndexMenu: () => void;
   openModal: (project: ProjectProps) => void;
   closeModal: () => void;
@@ -20,6 +22,8 @@ const useModalStore = create<ModalState>((set) => ({
   selectedProject: null,
   isModalOpen: false,
   isIndexMenuOpen: false,
+  navBarHeight: 0,
+  setNavBarHeight: (height: number) => set({ navBarHeight: height }),
   toggleIndexMenu: () =>
     set((state) => {
       return { isIndexMenuOpen: !state.isIndexMenuOpen };

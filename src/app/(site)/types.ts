@@ -14,6 +14,9 @@ export type ProjectImage = {
     _type: 'reference';
     metadata: {
       lqip: string;
+      dimensions: {
+        aspectRatio: number;
+      }
     };
   };
   caption?: string;
