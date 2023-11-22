@@ -34,6 +34,7 @@ export default function SingleImage({
           className={`h-auto w-screen object-contain lg:h-[90vh] lg:w-auto`}
           placeholder="blur"
           blurDataURL={image.asset.metadata.lqip}
+          loading='eager'
         />
       </div>
     );

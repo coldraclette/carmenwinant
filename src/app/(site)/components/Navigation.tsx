@@ -64,7 +64,7 @@ export default function Navigation() {
             className="mt-2 flex w-full flex-col justify-center text-sm lg:mt-0"
             ref={navBarRef}
           >
-            <h3 className="flex justify-center text-xl leading-6 lg:hidden">
+            <h3 className="flex justify-center text-center text-xl leading-6 lg:hidden">
               {selectedProject?.title}
             </h3>
             {selectedProject?.subtitle && (
