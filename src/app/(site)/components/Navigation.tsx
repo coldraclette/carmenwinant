@@ -45,7 +45,7 @@ export default function Navigation() {
         <div className="flex w-full justify-between gap-2 leading-6 md:text-[2rem] md:leading-9">
           <h1 className="shrink-0 ">Carmen Winant</h1>
           {isModalOpen && (
-            <h3 className="hidden text-center leading-6 md:text-[2rem] md:leading-9 lg:flex">
+            <h3 className="hidden text-center leading-6 md:text-[1.125rem] md:leading-9 lg:flex">
               {selectedProject?.title}
             </h3>
           )}
@@ -64,16 +64,16 @@ export default function Navigation() {
             className="mt-2 flex w-full flex-col justify-center text-sm lg:mt-0"
             ref={navBarRef}
           >
-            <h3 className="flex justify-center text-center text-xl leading-6 lg:hidden">
+            <h3 className="flex justify-center text-center text-xl leading-6 md:px-[14.5rem] lg:hidden">
               {selectedProject?.title}
             </h3>
             {selectedProject?.subtitle && (
-              <p className="justify-center text-center text-xl leading-6 md:text-[2rem] md:leading-9 lg:flex">
+              <p className="justify-center text-center text-xl leading-6 md:px-[14.5rem] md:text-[1.125rem] md:leading-9 lg:flex">
                 {selectedProject?.subtitle}
               </p>
             )}
             {selectedProject?.year && (
-              <p className="justify-center text-center text-xl leading-6 md:text-[2rem] md:leading-9 lg:flex">
+              <p className="justify-center text-center text-xl leading-6 md:px-[14.5rem] md:text-[1.125rem] md:leading-9 lg:flex">
                 {selectedProject?.year}
               </p>
             )}
