@@ -6,11 +6,15 @@ import { ProjectImage } from '../types';
 interface SingleImageProps {
   image: ProjectImage;
   inModal?: boolean;
+  onImageClick?: any;
+  index?: number;
 }
 
 export default function SingleImage({
   image,
   inModal = false,
+  onImageClick,
+  index,
 }: SingleImageProps) {
   if (!image) return null;
 
@@ -34,7 +38,7 @@ export default function SingleImage({
           className={`h-auto w-screen object-contain lg:h-[90vh] lg:w-auto`}
           placeholder="blur"
           blurDataURL={image.asset.metadata.lqip}
-          loading='eager'
+          loading="eager"
         />
       </div>
     );
@@ -43,6 +47,9 @@ export default function SingleImage({
   return (
     <div className="relative mr-[15px]">
       <Image
+        onClick={() => {
+          onImageClick(index);
+        }}
         alt=""
         height={fixedHeightRow}
         width={dynamicWidthRow}

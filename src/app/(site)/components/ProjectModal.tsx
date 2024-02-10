@@ -4,7 +4,8 @@ import useModalStore from '../store/modalStore';
 import ProjectRow from './ProjectRow';
 
 export default function ProjectModal({}) {
-  const { isModalOpen, selectedProject, navBarHeight } = useModalStore();
+  const { isModalOpen, selectedProject, navBarHeight, selectedImageIndex } =
+    useModalStore();
 
   if (!isModalOpen || !selectedProject) return null;
 
@@ -13,7 +14,11 @@ export default function ProjectModal({}) {
       className="fixed bottom-0 z-10 flex h-full items-end justify-center overflow-auto bg-white/80 px-4 pb-2"
       style={{ paddingTop: navBarHeight }}
     >
-      <ProjectRow project={selectedProject} inModal={true} />
+      <ProjectRow
+        project={selectedProject}
+        inModal={true}
+        initialSlide={selectedImageIndex}
+      />
     </div>
   );
 }

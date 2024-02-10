@@ -10,11 +10,12 @@ interface ModalState {
   navBarHeight: number;
   setNavBarHeight: (height: number) => void;
   toggleIndexMenu: () => void;
-  openModal: (project: ProjectProps) => void;
+  openModal: (project: ProjectProps, imageIndex?: number) => void;
   closeModal: () => void;
   projects: ProjectProps[];
   setProjects: (projects: ProjectProps[]) => void;
   scrollToProject: (projectId: string) => void;
+  selectedImageIndex: number;
 }
 
 const useModalStore = create<ModalState>((set) => ({
@@ -28,8 +29,13 @@ const useModalStore = create<ModalState>((set) => ({
     set((state) => {
       return { isIndexMenuOpen: !state.isIndexMenuOpen };
     }),
-  openModal: (project: ProjectProps) =>
-    set({ selectedProject: project, isModalOpen: true }),
+  openModal: (project: ProjectProps, imageIndex?: number) => {
+    set({
+      selectedProject: project,
+      isModalOpen: true,
+      selectedImageIndex: imageIndex,
+    });
+  },
   closeModal: () => set({ selectedProject: null, isModalOpen: false }),
   setProjects: (projects: ProjectProps[]) => set({ projects }),
   scrollToProject: (projectId: string) => {
@@ -38,6 +44,7 @@ const useModalStore = create<ModalState>((set) => ({
       projectEl.scrollIntoView({ behavior: 'smooth' });
     }
   },
+  selectedImageIndex: 0,
 }));
 
 export const useLockBodyScroll = () => {
