@@ -11,7 +11,7 @@ export default function ProjectModal({}) {
 
   return (
     <div
-      className="fixed bottom-0 z-10 flex h-full items-end justify-center overflow-auto bg-white/802"
+      className="fixed bottom-0 z-10 flex h-full items-end justify-center overflow-auto bg-white/80"
       style={{ paddingTop: navBarHeight }}
     >
       <ProjectRow
