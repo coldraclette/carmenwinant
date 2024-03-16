@@ -36,7 +36,12 @@ const useModalStore = create<ModalState>((set) => ({
       selectedImageIndex: imageIndex,
     });
   },
-  closeModal: () => set({ selectedProject: null, isModalOpen: false }),
+  closeModal: () => {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('project');
+    window.history.pushState(null, '', url.toString());
+    set({ selectedProject: null, isModalOpen: false });
+  },
   setProjects: (projects: ProjectProps[]) => set({ projects }),
   scrollToProject: (projectId: string) => {
     const projectEl = document.getElementById(projectId);

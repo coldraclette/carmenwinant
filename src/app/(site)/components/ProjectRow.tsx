@@ -22,11 +22,14 @@ export default function ProjectRow({
   inModal = false,
   initialSlide,
 }: ProjectRowProps) {
-  const { openModal, selectedImageIndex } = useModalStore();
+  const { openModal } = useModalStore();
 
   const onImageClick = (index: number) => {
     if (!inModal) {
-      openModal(project, index); // Open the modal with the project and the clicked image index
+      openModal(project, index);
+      const url = new URL(window.location.href);
+      url.searchParams.set('project', project.title);
+      window.history.pushState(null, '', url.toString());
     }
   };
 
