@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 
-import useModalStore from '../store/modalStore';
+import useModalStore, { useLockBodyScroll } from '../store/modalStore';
 import { ProjectImage, ProjectProps, ProjectTextBlock } from '../types';
 import { composeClassNames } from '../utils';
 import SingleImage from './SingleImage';
@@ -53,6 +53,7 @@ export default function ProjectRow({
 
   return (
     <>
+      {useLockBodyScroll()}
       <Swiper
         slidesPerView={'auto'}
         className="swiper-project h-full w-full"

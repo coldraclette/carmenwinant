@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useModalStore from '../store/modalStore';
+import useModalStore, { useLockBodyScroll } from '../store/modalStore';
 import ProjectRow from './ProjectRow';
 
 export default function ProjectModal({}) {

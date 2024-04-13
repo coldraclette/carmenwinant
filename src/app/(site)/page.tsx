@@ -36,5 +36,9 @@ export default async function Page() {
 
   if (!projects) return;
 
-  return <ProjectsList projects={projects} />;
+  return (
+    <>
+      <ProjectsList projects={projects} />
+    </>
+  );
 }
