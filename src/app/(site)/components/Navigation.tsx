@@ -33,6 +33,9 @@ export default function Navigation() {
 
     if (project) {
       openModal(project);
+      const url = new URL(window.location.href);
+      url.searchParams.set("project", project.title);
+      window.history.pushState(null, "", url.toString());
     }
 
     scrollToProject(projectId);
